@@ -32,3 +32,11 @@ C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\musi
 C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\musicstore.dll
 C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\musicstore.pdb
 C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\musicstore.csproj.CopyComplete
+C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razor\Views\Albums\Create.cshtml.g.cs
+C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razor\Views\Albums\Delete.cshtml.g.cs
+C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razor\Views\Albums\Details.cshtml.g.cs
+C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razor\Views\Albums\Edit.cshtml.g.cs
+C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razor\Views\Albums\Index.cshtml.g.cs
+C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razor\Views\Store\Sample.cshtml.g.cs
+C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\BaseSite.cshtml.g.cs
+C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razor\Views\Store\AlbumList.cshtml.g.cs
