@@ -22,20 +22,18 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">FYPatients</a>
+
+                <a style="color: #000;float:left;margin-left:10px" asp-controller="FYCountries" asp-action="Index">Country</a>
+                <a style="color: #000;float:left;margin-left:10px" asp-controller="FYConcentrationUnits" asp-action="Index">Concentration</a>
+                <a style="color: #000;float:left;margin-left:10px" asp-controller="FYDiagnosisCategroies" asp-action="Index">Diagnosis</a>
+                <a style="color: #000;float:left;margin-left:10px" asp-controller="FYDispensingUnits" asp-action="Index">Dispensing</a>
+                <a style="color: #000;float:left;margin-left:10px" asp-controller="FYMedicationTypes" asp-action="Index">Med Type</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </nav>
@@ -49,7 +47,13 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - FYPatients - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2020 - <a href="mailto:fyun0643@conestogac.on.ca">Fei Yun</a> 
+
+            
+                    <a  style="margin-right:5px;float:right" asp-controller="Home" asp-action="Index">Home</a>
+              
+                    <a  style="margin-right:5px;float:right" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+         
         </div>
     </footer>
 
