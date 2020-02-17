@@ -1,0 +1,24 @@
+﻿@model IEnumerable<PriceSurcharged>
+@{
+    ViewData["Title"] = "Price Surcharged View";
+}
+
+<h1>LINQTest</h1>
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Price</th>
+        <th>Surcharged Price</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.Title</td>
+        <td>@item.Artist</td>
+        <td>@item.Price.ToString("c2")</td>
+        <td>@item.SurchargedPrice.ToString("c2")</td>
+    </tr>
+    }
+</table>

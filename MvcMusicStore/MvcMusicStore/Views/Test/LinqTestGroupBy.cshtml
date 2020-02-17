@@ -1,0 +1,25 @@
+﻿@model IEnumerable<LinqTestArtistCount>
+@{
+    ViewData["Title"] = "LinqTestGroupBy";
+}
+
+<h1>LinqTestGroupBy</h1>
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<table>
+    <tr>
+        <th>Artist</th>
+        <th>Count</th>
+        <th>Total Price</th>
+        <th>Average Price</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.artist</td>
+            <td>@item.count</td>
+            <td>@item.totalPrice.ToString("c2")</td>
+            <td>@item.AveragePrice.ToString("c2")</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Album>
+@{
+    ViewData["Title"] = "LINQTest";
+}
+
+<h1>LINQTest</h1>
+// all is show all tyoe of errors
+//modelonly show the error of models which key is blank
+<div asp-validation-summary="ModelOnly" class="=text-danger"></div>
+<table>
+    <tr>
+        <th>ID</th><th>Title</th><th>Artist</th><th>Generes</th><th>Price</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+        <td>@item.AlbumId</td>
+        <td>@item.Title</td>
+        <td>@item.Artist.Name</td>
+        <td>@item.Genre.Name</td>
+        <td>@item.Price</td>
+    </tr>
+    }
+</table>

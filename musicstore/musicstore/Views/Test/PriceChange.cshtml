@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "PriceChange";
+}
+
+<h1>PriceChange</h1>
+
+// all is show all tyoe of errors
+//modelonly show the error of models which key is blank
+<div asp-validation-summary="ModelOnly" class="=text-danger"></div>
+<table>
+    <tr>
+
+        <th>Title</th>
+       
+        <th>Price</th>
+        <th>taxPrice</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+
+    <td>@item.Title</td>
+    
+    <td>@item.Price.ToString("C2")</td>
+    <td>@item.taxPrice</td>
+</tr>
+    }
+    </table>

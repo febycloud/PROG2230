@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "FilterView";
+}
+
+<h1>FilterView</h1>
+
+// all is show all tyoe of errors
+//modelonly show the error of models which key is blank
+<div asp-validation-summary="ModelOnly" class="=text-danger"></div>
+<table>
+    <tr>
+        
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Generes</th>      
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            
+            <td>@item.Title</td>
+            <td>@item.Artist.Name</td>
+            <td>@item.Genre.Name</td>
+            
+        </tr>
+    }
+</table>
+

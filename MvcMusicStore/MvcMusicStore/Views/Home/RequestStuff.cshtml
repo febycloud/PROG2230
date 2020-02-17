@@ -1,0 +1,22 @@
+﻿@using MvcMusicStore.Models
+@using Microsoft.AspNetCore.Http;
+@model IEnumerable<Generic2String>
+@{
+    ViewData["Title"] = "RequestStuff";
+}
+
+<h1>RequestStuff</h1>
+<table>
+    @Context.Session.GetString("artistName")
+    @*<tr>
+        <th>Key</th>
+        <th>Value</th>
+    </tr>*@
+    @*@foreach(Generic2String obj in Model)
+    {
+        <tr>
+            <td>@obj.key</td>
+            <td>@obj.value</td>
+        </tr>
+    }*@
+</table>

@@ -40,3 +40,11 @@ C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razo
 C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razor\Views\Store\Sample.cshtml.g.cs
 C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\BaseSite.cshtml.g.cs
 C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razor\Views\Store\AlbumList.cshtml.g.cs
+C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razor\Views\Home\RequestStuff.cshtml.g.cs
+C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razor\Views\Test\LINQTest.cshtml.g.cs
+C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razor\Views\Test\FilterView.cshtml.g.cs
+C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razor\Views\Test\PriceChange.cshtml.g.cs
+C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razor\Views\Test\LinqGroupBy.cshtml.g.cs
+C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razor\Views\Test\Search.cshtml.g.cs
+C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razor\Views\Test\View.cshtml.g.cs
+C:\Users\Fei\Desktop\PROG2230\musicstore\musicstore\obj\Debug\netcoreapp2.2\Razor\Views\Checkout\AddressandPayment.cshtml.g.cs

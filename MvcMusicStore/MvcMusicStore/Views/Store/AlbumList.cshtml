@@ -1,0 +1,13 @@
+﻿@model IEnumerable<MvcMusicStore.Models.Album>
+@{
+    ViewData["Title"] = "Store Album List";
+    Layout = "~/Views/Shared/Basesite.cshtml";
+}
+
+<h1>AlbumList</h1>
+<ul>
+    @foreach(var item in Model)
+    {
+        <li>@item.Title</li>
+    }
+</ul>   

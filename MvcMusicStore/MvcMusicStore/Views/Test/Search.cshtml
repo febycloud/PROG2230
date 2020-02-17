@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Album>
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search</h1>
+<table>
+    <tr>
+        <th>Artist</th>
+        <th>Title</th>
+        <th>Price</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+    <tr>
+        <td>@item.Artist.Name</td>
+        <td>@item.Title</td>
+        <td>@item.Price.ToString("c2")</td>
+    </tr>
+    }
+</table>

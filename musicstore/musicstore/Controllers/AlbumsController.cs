@@ -100,6 +100,7 @@ namespace musicstore.Controllers
             {
                 return NotFound();
             }
+          //  if (album.Price < 0) { ModelState.AddModelError("price cannot be under 0"); }
 
             if (ModelState.IsValid)
             {

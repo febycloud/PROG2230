@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "LinqGroupBy";
+}
+
+<h1>LinqGroupBy</h1>
+
+<div asp-validation-summary="ModelOnly" class="=text-danger"></div>
+<table>
+    <tr>
+
+        <th>Title</th>
+        <th>Count</th>
+        <th>Price</th>
+        <th>taxPrice</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.Artist</td>
+            <td>@item.Count</td>
+            <td>@item.TotalPrice.ToString("C2")</td>
+            <td>@item.AvgPrice.ToString("C3")</td>
+        </tr>
+    }
+</table>
