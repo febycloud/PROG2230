@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Fei\\Desktop\\A1Patients\\A1Patients\\A1Patients.csproj": {}
+    "C:\\Users\\Fei\\Desktop\\PROG2230\\A1Patients\\A1Patients\\A1Patients.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Fei\\Desktop\\A1Patients\\A1Patients\\A1Patients.csproj": {
+    "C:\\Users\\Fei\\Desktop\\PROG2230\\A1Patients\\A1Patients\\A1Patients.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fei\\Desktop\\A1Patients\\A1Patients\\A1Patients.csproj",
+        "projectUniqueName": "C:\\Users\\Fei\\Desktop\\PROG2230\\A1Patients\\A1Patients\\A1Patients.csproj",
         "projectName": "A1Patients",
-        "projectPath": "C:\\Users\\Fei\\Desktop\\A1Patients\\A1Patients\\A1Patients.csproj",
+        "projectPath": "C:\\Users\\Fei\\Desktop\\PROG2230\\A1Patients\\A1Patients\\A1Patients.csproj",
         "packagesPath": "C:\\Users\\Fei\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fei\\Desktop\\A1Patients\\A1Patients\\obj\\",
+        "outputPath": "C:\\Users\\Fei\\Desktop\\PROG2230\\A1Patients\\A1Patients\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

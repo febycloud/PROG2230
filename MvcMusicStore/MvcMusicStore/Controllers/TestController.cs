@@ -72,7 +72,7 @@ namespace MvcMusicStore.Controllers
 
             // Filtering using Where
             // EF Syntax
-            var album = _context.Album.Include(a => a.Artist).Include(a => a.Genre).Where(a => a.Title.Contains("Best"));
+            //var album = _context.Album.Include(a => a.Artist).Include(a => a.Genre).Where(a => a.Title.Contains("Best"));
 
             // Order by EF Syntax
             //var album = _context.Album.Include(a => a.Artist).Include(a => a.Genre).
@@ -86,7 +86,7 @@ namespace MvcMusicStore.Controllers
             //            orderby analbum.Artist.Name descending, analbum.Title ascending
             //            select analbum;
 
-          //  var album = _context.Album.Include(a => a.Artist).Include(a => a.Genre).Skip(10).Take(10);
+            var album = _context.Album.Include(a => a.Artist).Include(a => a.Genre).Skip(10).Take(10);
                          
             return View(album);
         }
@@ -126,23 +126,6 @@ namespace MvcMusicStore.Controllers
         public IActionResult Index()
         {
             return View();
-        }
-
-        public IActionResult GetExample()
-        {
-            return View();
-        }
-
-        public IActionResult GetExample2(string q)
-        {
-            return View("GetExample");
-        }
-
-        public IActionResult Search(string query)
-        {
-            var albums = _context.Album.Include(a => a.Artist)
-                .Where(a => a.Title.Contains(query) || a.Artist.Name.Contains(query));
-            return View(albums);
         }
     }
 }

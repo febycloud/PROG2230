@@ -96,8 +96,6 @@ namespace MvcMusicStore.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("AlbumId,GenreId,ArtistId,Title,Price,AlbumArtUrl")] Album album)
         {
-
-            if(album.Price <0) { ModelState.AddModelError("Price", "Price cannot be negative"); }
             if (id != album.AlbumId)
             {
                 return NotFound();

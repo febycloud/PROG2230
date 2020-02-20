@@ -22,13 +22,13 @@ namespace A1Patients.Controllers
         // GET: FYMedications
         public async Task<IActionResult> Index(string id,string medname) //get id and name where parsed by medtype
         {
-            if (id == null)
+            if (id == null) //check if url include id
             {
-                if (Request.Cookies["MedId"] != null)
+                if (Request.Cookies["MedId"] != null) //check if cookie saved
                 {
-                    int medId2 = Convert.ToInt32(Request.Cookies["MedId"]);
-                    string medname2 = Request.Cookies["Medname"];
-                    var patientsContext = _context.Medication
+                    int medId2 = Convert.ToInt32(Request.Cookies["MedId"]); //take cookie
+                    string medname2 = Request.Cookies["Medname"]; 
+                    var patientsContext = _context.Medication // take value from database
                 .Include(m => m.ConcentrationCodeNavigation)
                 .Include(m => m.DispensingCodeNavigation)
                 .Include(m => m.MedicationType)
@@ -39,14 +39,15 @@ namespace A1Patients.Controllers
                     return View(await patientsContext.ToListAsync());
 
                 }
-                return NotFound();
+                TempData["message"] = "we cannot find the medicines you want"; //show error
+                return RedirectToRoute(new { Controller = "A1MedicationTypes",Action = "Index"}); //return to index
             }
             else
             {
                 int medId = 0;
                 Int32.TryParse(id, out medId);
-                Response.Cookies.Append("MedId", id, new CookieOptions { Expires = DateTime.Today.AddDays(1) }); //make cookie as id
-                Response.Cookies.Append("MedName", medname, new CookieOptions { Expires = DateTime.Today.AddDays(1) });// make cookie as name
+                Response.Cookies.Append("MedId", id, new CookieOptions { Expires = DateTime.Today.AddDays(2) }); //make cookie as id
+                Response.Cookies.Append("MedName", medname, new CookieOptions { Expires = DateTime.Today.AddDays(2) });// make cookie as name
                 var patientsContext = _context.Medication
                     .Include(m => m.ConcentrationCodeNavigation)
                     .Include(m => m.DispensingCodeNavigation)
@@ -83,9 +84,10 @@ namespace A1Patients.Controllers
         // GET: FYMedications/Create
         public IActionResult Create()
         {
+            int medId = Convert.ToInt32(Request.Cookies["MedId"]); //take cookie
             ViewData["ConcentrationCode"] = new SelectList(_context.ConcentrationUnit, "ConcentrationCode", "ConcentrationCode").OrderBy(a => a.Text).ToList();
             ViewData["DispensingCode"] = new SelectList(_context.DispensingUnit, "DispensingCode", "DispensingCode").OrderBy(a=>a.Text).ToList();
-            ViewData["MedicationTypeId"] = new SelectList(_context.MedicationType, "MedicationTypeId", "Name");
+            ViewData["MedicationTypeId"] = new SelectList(_context.MedicationType, "MedicationTypeId", "Name",medId);
             string medname = Convert.ToString(Request.Cookies["Medname"]);
             ViewBag.medname = medname;
             return View();
@@ -98,16 +100,36 @@ namespace A1Patients.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Din,Name,Image,MedicationTypeId,DispensingCode,Concentration,ConcentrationCode")] Medication medication)
         {
-            if (ModelState.IsValid)
+            int medId = Convert.ToInt32(Request.Cookies["MedId"]); //take cookie
+            string medname = Convert.ToString(Request.Cookies["Medname"]);
+            ViewBag.medname = medname;
+            MedicationType med = new MedicationType { MedicationTypeId = medId, Name = medname };
+            var generalContext = _context.Medication //check value input
+                .Include(m => m.ConcentrationCodeNavigation)
+                .Include(m => m.ConcentrationCodeNavigation)
+                .Include(m => m.MedicationType);
+            var duplicateTest = generalContext.Where(m => m.Name == medication.Name) //check if duplicate
+                .Where(m => m.Concentration == medication.Concentration)
+                .Where(m => m.ConcentrationCode == medication.ConcentrationCode);
+            if (duplicateTest.Any())
             {
-                _context.Add(medication);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                TempData["message"] = "this medication is alread exist"; //show error
+                return View(medication); 
             }
-            ViewData["ConcentrationCode"] = new SelectList(_context.ConcentrationUnit, "ConcentrationCode", "ConcentrationCode", medication.ConcentrationCode);
-            ViewData["DispensingCode"] = new SelectList(_context.DispensingUnit, "DispensingCode", "DispensingCode", medication.DispensingCode);
-            ViewData["MedicationTypeId"] = new SelectList(_context.MedicationType, "MedicationTypeId", "Name", medication.MedicationTypeId);
-            return View(medication);
+
+            else
+            {
+                if (ModelState.IsValid) //if not then create the value
+                {
+                    _context.Add(medication);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                ViewData["ConcentrationCode"] = new SelectList(_context.ConcentrationUnit, "ConcentrationCode", "ConcentrationCode", medication.ConcentrationCode);
+                ViewData["DispensingCode"] = new SelectList(_context.DispensingUnit, "DispensingCode", "DispensingCode", medication.DispensingCode);
+                ViewData["MedicationTypeId"] = new SelectList(_context.MedicationType, "MedicationTypeId", "Name", medication.MedicationTypeId);
+                return View(medication);
+            }
         }
 
         // GET: FYMedications/Edit/5
@@ -154,14 +176,16 @@ namespace A1Patients.Controllers
                 {
                     if (!MedicationExists(medication.Din))
                     {
-                        return NotFound();
+                        return View(medication);
+                       // return NotFound();
                     }
                     else
                     {
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return View(medication);
+                 //return RedirectToAction(nameof(Index));
             }
             ViewData["ConcentrationCode"] = new SelectList(_context.ConcentrationUnit, "ConcentrationCode", "ConcentrationCode", medication.ConcentrationCode);
             ViewData["DispensingCode"] = new SelectList(_context.DispensingUnit, "DispensingCode", "DispensingCode", medication.DispensingCode);

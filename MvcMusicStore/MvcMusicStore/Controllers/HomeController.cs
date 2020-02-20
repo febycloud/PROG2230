@@ -85,14 +85,14 @@ namespace MvcMusicStore.Controllers
         public IActionResult ReadCookie()
         {
             string artistID = string.Empty;
-            if(Request.Cookies["artistID"] != null)
+            if (Request.Cookies["artistID"] != null)
             {
                 artistID = Request.Cookies["artistID"].ToString();
             }
 
 
-            string artistName = HttpContext.Session.GetString("artistName");
-            Int32 ID = Convert.ToInt32(HttpContext.Session.GetInt32("ID"));
+            //string artistName = HttpContext.Session.GetString("artistName");
+            //Int32 ID = Convert.ToInt32(HttpContext.Session.GetInt32("ID"));
             return View();
 
         }

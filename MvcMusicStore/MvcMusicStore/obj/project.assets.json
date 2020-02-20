@@ -12949,11 +12949,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fei\\Desktop\\PROG2230\\MvcMusicStore\\MvcMusicStore\\MvcMusicStore.csproj",
+      "projectUniqueName": "C:\\Users\\Fei\\Desktop\\MvcMusicStore\\MvcMusicStore\\MvcMusicStore.csproj",
       "projectName": "MvcMusicStore",
-      "projectPath": "C:\\Users\\Fei\\Desktop\\PROG2230\\MvcMusicStore\\MvcMusicStore\\MvcMusicStore.csproj",
+      "projectPath": "C:\\Users\\Fei\\Desktop\\MvcMusicStore\\MvcMusicStore\\MvcMusicStore.csproj",
       "packagesPath": "C:\\Users\\Fei\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fei\\Desktop\\PROG2230\\MvcMusicStore\\MvcMusicStore\\obj\\",
+      "outputPath": "C:\\Users\\Fei\\Desktop\\MvcMusicStore\\MvcMusicStore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
